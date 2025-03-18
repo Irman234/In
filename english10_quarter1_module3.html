@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3 - Identifying Claims, Counterclaims, and Evidence in Texts</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <button onclick="goBack()" class="back-button">🔙 Back</button>
+    <h1 class="title">English - Grade 10: Identifying Claims, Counterclaims, and Evidence</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showContent('overview')">Understanding Claims</button>
+            <button onclick="showContent('effects')">Finding Evidence</button>
+            <button onclick="showContent('types')">Evaluating Counterclaims</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-box">
+                <h2 id="module-title">Understanding Claims</h2>
+                <div class="scrollable-content">
+                    <p id="module-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+
+    <script>
+    const contentData = {
+        overview: { 
+            title: "Understanding Claims", 
+            text: `
+<pre>
+Claims in Arguments:
+
+1. Main Claim Components
+   - Clear statement
+   - Definite position
+   - Supportable assertion
+
+2. Types of Claims
+   - Fact claims: Verifiable statements
+   - Value claims: Quality judgments
+   - Policy claims: Action proposals
+
+3. Claim Structure
+   - Topic introduction
+   - Position statement
+   - Supporting points
+   - Logical conclusion
+</pre>
+            `
+        },
+        effects: { 
+            title: "Finding Evidence", 
+            text: `
+<pre>
+Types of Evidence:
+
+1. Primary Sources
+   - Original documents
+   - Direct observations
+   - First-hand accounts
+   - Raw data
+
+2. Secondary Sources
+   - Expert analysis
+   - Research summaries
+   - Academic articles
+   - Professional reviews
+
+3. Supporting Details
+   - Statistics
+   - Examples
+   - Expert quotes
+   - Case studies
+
+4. Evidence Quality
+   - Relevance
+   - Credibility
+   - Currency
+   - Accuracy
+</pre>
+            `
+        },
+        types: { 
+            title: "Evaluating Counterclaims", 
+            text: `
+<pre>
+Analyzing Counterclaims:
+
+1. Identifying Opposing Views
+   - Different perspectives
+   - Alternative solutions
+   - Contradicting evidence
+
+2. Evaluating Strength
+   - Evidence quality
+   - Logical reasoning
+   - Source credibility
+
+3. Response Strategies
+   - Acknowledge validity
+   - Address concerns
+   - Present counter-evidence
+   - Maintain objectivity
+
+4. Integration Tips
+   - Fair representation
+   - Balanced discussion
+   - Respectful tone
+   - Clear rebuttal
+</pre>
+            `
+        }
+    };
+
+    function showContent(module) {
+        document.getElementById("module-title").innerHTML = contentData[module].title;
+        document.getElementById("module-content").innerHTML = contentData[module].text;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

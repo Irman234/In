@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3 - Synthesizing Information</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+   <button onclick="goBack()" class="back-button">🔙 Back</button>
+
+    <h1 class="title">English - Grade 8: Synthesizing Information</h1>
+
+    <div class="container"> 
+        <div class="sidebar">
+            <button onclick="showContent('overview')">Overview</button>
+            <button onclick="showContent('verbs')">Synthesizing Information</button>
+            <button onclick="showContent('adjectives')">Importance of Synthesizing Information</button>
+            <button onclick="showContent('adverbs')">How to Synthesize Information</button>
+        
+        </div>
+        <div class="content-wrapper">
+            <div class="content-box">
+                <h2 id="module-title">Overview</h2>
+                <div class="scrollable-content">
+                    <p id="module-content"></p>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img id="module-image" src="images/vocabulary.jpg" alt="Vocabulary Learning">
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+    <script>
+    const contentData = {
+        overview: {
+            title: "Overview",
+            text: `<pre> 
+Synthesizing information means combining ideas from different sources to create a clear, new understanding. <br>It's an essential skill in writing and research,<br> helping to connect various pieces of information to form a complete picture.
+			</pre>`, },
+			
+         verbs: {
+			title: "Synthesizing Information",
+            text: `<pre> 
+Instead of just summarizing facts or repeating what others have said, <br>synthesizing involves blending information from different viewpoints or sources.<br> This allows you to create new insights or make stronger arguments.
+			</pre>`,
+    
+        },
+		
+		adjectives: {
+			title: "Importance of Synthesizing Information",
+            text: `<pre>
+Synthesizing helps you see connections between ideas, <br>allowing you to build a more complete and balanced perspective. <br>It encourages critical thinking and helps you present well-rounded, <br>original arguments.
+			 </pre>`,
+    
+        },
+		
+		adverbs: {
+			title: "How to Synthesize Information:",
+            text: `<ul>
+			<li><strong>Identify Key Points:</strong> Look for the main ideas in each source. </li>
+			<li><strong>Compare and Contrast:</strong> See how the information connects or differs</li>
+			<li><strong>Create New Insights:</strong>  Combine the ideas to develop a deeper understanding or stronger argument.</li>`,
+    
+        },
+
+    };
+ function goBack() {
+        window.history.back();
+    }
+
+   
+   
+            function showContent(module) {
+                document.getElementById("module-title").innerHTML = contentData[module].title;
+                document.getElementById("module-content").innerHTML = contentData[module].text;
+                document.getElementById("module-image").src = contentData[module].image;
+            }
+    </script>
+</body>
+</html>

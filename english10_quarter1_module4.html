@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4 - Analyzing Literary and Informational Texts</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <button onclick="goBack()" class="back-button">🔙 Back</button>
+    <h1 class="title">English - Grade 10: Analyzing Literary and Informational Texts</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showContent('overview')">Literary Analysis</button>
+            <button onclick="showContent('effects')">Text Elements</button>
+            <button onclick="showContent('types')">Analysis Strategies</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-box">
+                <h2 id="module-title">Literary Analysis</h2>
+                <div class="scrollable-content">
+                    <p id="module-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+
+    <script>
+    const contentData = {
+        overview: { 
+            title: "Literary Analysis", 
+            text: `
+<pre>
+Understanding Literary Analysis:
+
+1. Plot Structure
+   - Exposition: Setting and character introduction
+   - Rising Action: Building tension and conflict
+   - Climax: Peak of conflict/tension
+   - Falling Action: Events after climax
+   - Resolution: Final outcome
+
+2. Character Development
+   - Protagonist characteristics
+   - Antagonist motivations
+   - Supporting character roles
+   - Character relationships
+   - Growth and change
+
+3. Theme Analysis
+   - Main ideas
+   - Universal messages
+   - Supporting evidence
+   - Author's purpose
+   - Thematic connections
+</pre>`
+        },
+        effects: { 
+            title: "Text Elements", 
+            text: `
+<pre>
+Key Elements in Literature:
+
+1. Setting Analysis
+   - Time period context
+   - Physical location
+   - Social environment
+   - Historical background
+   - Atmosphere/mood
+
+2. Literary Devices
+   - Metaphor/Simile
+   - Personification
+   - Symbolism
+   - Imagery
+   - Foreshadowing
+   - Irony types
+
+3. Writing Style
+   - Author's voice
+   - Tone and mood
+   - Word choice
+   - Sentence structure
+   - Literary techniques
+</pre>`
+        },
+        types: { 
+            title: "Analysis Strategies", 
+            text: `
+<pre>
+Analysis Methods:
+
+1. Close Reading
+   - Detailed annotation
+   - Context analysis
+   - Quote interpretation
+   - Pattern identification
+   - Evidence gathering
+
+2. Critical Analysis
+   - Making inferences
+   - Drawing conclusions
+   - Supporting arguments
+   - Evaluating meaning
+   - Connecting ideas
+
+3. Comparative Study
+   - Text relationships
+   - Theme connections
+   - Style comparisons
+   - Context contrasts
+   - Pattern analysis
+
+4. Technical Evaluation
+   - Structure analysis
+   - Style assessment
+   - Device effectiveness
+   - Purpose achievement
+   - Impact analysis
+</pre>`
+        }
+    };
+
+    function showContent(module) {
+        document.getElementById("module-title").innerHTML = contentData[module].title;
+        document.getElementById("module-content").innerHTML = contentData[module].text;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

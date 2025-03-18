@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4e387e;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+.title {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #7c4dff, #ff8a65);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.collage-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.box {
+    display: block;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.box:hover ~ .circle {
+    animation: gather 1s forwards, moveRandom 5s infinite ease-in-out;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: explosion 2s ease-out forwards, moveRandom 5s infinite ease-in-out;
+    z-index: 0;
+}
+
+.circle-1 {
+    width: 50px;
+    height: 50px;
+    background-color: #ff8a65;
+    top: 30%;
+    left: 20%;
+}
+
+.circle-2 {
+    width: 50px;
+    height: 50px;
+    background-color: #7c4dff;
+    top: 50%;
+    left: 30%;
+}
+
+.circle-3 {
+    width: 50px;
+    height: 50px;
+    background-color: #ff8a65;
+    top: 20%;
+    left: 70%;
+}
+
+.circle-4 {
+    width: 50px;
+    height: 50px;
+    background-color: #7c4dff;
+    top: 80%;
+    left: 50%;
+}
+
+.circle-5 {
+    width: 50px;
+    height: 50px;
+    background-color: #ff8a65;
+    top: 40%;
+    left: 80%;
+}
+
+@keyframes explosion {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gather {
+    to {
+        transform: translate(var(--target-x), var(--target-y));
+    }
+}
+
+@keyframes moveRandom {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(30px, -20px);
+    }
+    50% {
+        transform: translate(-30px, 20px);
+    }
+    75% {
+        transform: translate(20px, -30px);
+    }
+}

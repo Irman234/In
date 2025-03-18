@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5 - Writing Persuasive and Argumentative Essays</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <button onclick="goBack()" class="back-button">🔙 Back</button>
+    <h1 class="title">English - Grade 10: Writing Persuasive and Argumentative Essays</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showContent('overview')">Essay Structure</button>
+            <button onclick="showContent('effects')">Argumentative Writing</button>
+            <button onclick="showContent('types')">Persuasive Techniques</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-box">
+                <h2 id="module-title">Essay Structure</h2>
+                <div class="scrollable-content">
+                    <p id="module-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+
+    <script>
+    const contentData = {
+        overview: { 
+            title: "Essay Structure", 
+            text: `
+<pre>
+Basic Essay Structure:
+
+1. Introduction
+   - Hook Statement
+   - Background Info
+   - Thesis Statement
+
+2. Body Paragraphs
+   - Topic Sentences
+   - Supporting Evidence
+   - Transitions
+
+3. Conclusion
+   - Restate Thesis
+   - Summarize Points
+   - Call to Action
+</pre>`
+        },
+        effects: { 
+            title: "Argumentative Writing", 
+            text: `
+<pre>
+Building Strong Arguments:
+
+1. Clear Position
+   - Specific Claim
+   - Focused Topic
+   - Strong Stance
+
+2. Evidence Support
+   - Facts and Data
+   - Expert Opinions
+   - Real Examples
+
+3. Counter-Arguments
+   - Acknowledge Opposition
+   - Address Concerns
+   - Provide Rebuttals
+</pre>`
+        },
+        types: { 
+            title: "Persuasive Techniques", 
+            text: `
+<pre>
+Effective Persuasion:
+
+1. Emotional Appeal
+   - Personal Stories
+   - Relatable Examples
+   - Engaging Language
+
+2. Logical Appeal
+   - Statistical Data
+   - Research Findings
+   - Expert Citations
+
+3. Ethical Appeal
+   - Credibility
+   - Trustworthiness
+   - Moral Arguments
+</pre>`
+        }
+    };
+    function showContent(module) {
+        document.getElementById("module-title").innerHTML = contentData[module].title;
+        document.getElementById("module-content").innerHTML = contentData[module].text;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

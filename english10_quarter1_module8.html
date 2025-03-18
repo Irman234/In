@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8 - Communicating Ideas Through Various Media</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <button onclick="goBack()" class="back-button">🔙 Back</button>
+    <h1 class="title">English - Grade 10: Communicating Ideas Through Various Media</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showContent('overview')">Media Communication</button>
+            <button onclick="showContent('effects')">Digital Platforms</button>
+            <button onclick="showContent('types')">Media Analysis</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-box">
+                <h2 id="module-title">Media Communication</h2>
+                <div class="scrollable-content">
+                    <p id="module-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+
+    <script>
+    const contentData = {
+        overview: { 
+            title: "Media Communication", 
+            text: `
+<pre>
+Understanding Media Communication:
+
+1. Communication Channels
+   - Traditional media (print, TV, radio)
+   - Digital media (websites, apps)
+   - Social platforms (social networks)
+   - Interactive media (games, VR)
+
+2. Message Elements
+   - Content purpose
+   - Target audience analysis
+   - Format selection
+   - Distribution methods
+   - Engagement strategies
+
+3. Media Impact
+   - Reach measurement
+   - Engagement metrics
+   - Effectiveness analysis
+   - Audience response
+   - Content performance
+</pre>`
+        },
+        effects: { 
+            title: "Digital Platforms", 
+            text: `
+<pre>
+Types of Digital Communication:
+
+1. Social Media Platforms
+   - Content strategy
+   - Audience engagement
+   - Platform features
+   - Best practices
+   - Analytics tools
+
+2. Multimedia Content
+   - Video production
+   - Audio creation
+   - Graphic design
+   - Interactive elements
+   - Mixed media
+
+3. Digital Writing
+   - Web content
+   - Blog posts
+   - Social updates
+   - Email marketing
+   - Digital newsletters
+
+4. Virtual Presentations
+   - Online meetings
+   - Webinars
+   - Digital slides
+   - Screen sharing
+   - Remote collaboration
+</pre>`
+        },
+        types: { 
+            title: "Media Analysis", 
+            text: `
+<pre>
+Analyzing Media Messages:
+
+1. Content Evaluation
+   - Message clarity
+   - Information accuracy
+   - Source credibility
+   - Visual impact
+   - User experience
+
+2. Context Analysis
+   - Platform selection
+   - Timing strategy
+   - Cultural considerations
+   - Audience needs
+   - Market conditions
+
+3. Technical Elements
+   - Format optimization
+   - Tool selection
+   - Design principles
+   - Accessibility
+   - Mobile responsiveness
+
+4. Performance Metrics
+   - Engagement rates
+   - Reach statistics
+   - Response analysis
+   - Conversion tracking
+   - ROI measurement
+</pre>`
+        }
+    };
+
+    function showContent(module) {
+        document.getElementById("module-title").innerHTML = contentData[module].title;
+        document.getElementById("module-content").innerHTML = contentData[module].text;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

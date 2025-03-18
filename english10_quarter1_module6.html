@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6 - Evaluating a Speaker's Argument and Evidence</title>
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <button onclick="goBack()" class="back-button">🔙 Back</button>
+    <h1 class="title">English - Grade 10: Evaluating a Speaker's Argument and Evidence</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showContent('overview')">Evaluating Arguments</button>
+            <button onclick="showContent('effects')">Types of Evidence</button>
+            <button onclick="showContent('types')">Credibility Assessment</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-box">
+                <h2 id="module-title">Evaluating Arguments</h2>
+                <div class="scrollable-content">
+                    <p id="module-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+
+    <script>
+    const contentData = {
+        overview: { 
+            title: "Evaluating Arguments", 
+            text: `
+<pre>
+Key Components of Argument Evaluation:
+
+1. Claim Identification
+   - Main argument
+   - Supporting points
+   - Underlying assumptions
+
+2. Evidence Analysis
+   - Quality of sources
+   - Relevance to claim
+   - Currency of information
+
+3. Reasoning Assessment
+   - Logical connections
+   - Valid conclusions
+   - Sound methodology
+</pre>`
+        },
+        effects: { 
+            title: "Types of Evidence", 
+            text: `
+<pre>
+Evaluating Different Types of Evidence:
+
+1. Primary Sources
+   - Original documents
+   - Direct observations
+   - First-hand accounts
+
+2. Secondary Sources
+   - Analysis by experts
+   - Interpretations
+   - Summaries
+
+3. Quantitative Evidence
+   - Statistical data
+   - Research findings
+   - Numerical analysis
+
+4. Qualitative Evidence
+   - Expert opinions
+   - Case studies
+   - Personal testimonies
+</pre>`
+        },
+        types: { 
+            title: "Credibility Assessment", 
+            text: `
+<pre>
+Assessing Speaker Credibility:
+
+1. Expertise
+   - Qualifications
+   - Experience
+   - Knowledge depth
+
+2. Reliability
+   - Consistency
+   - Accuracy record
+   - Source verification
+
+3. Bias Recognition
+   - Personal interests
+   - Hidden agendas
+   - Funding sources
+
+4. Presentation Quality
+   - Organization
+   - Clarity
+   - Supporting materials
+</pre>`
+        }
+    };
+    function showContent(module) {
+        document.getElementById("module-title").innerHTML = contentData[module].title;
+        document.getElementById("module-content").innerHTML = contentData[module].text;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCIENCE</title>
+    <link rel="stylesheet" href="dar.css">
+</head>
+<body>
+    <button onclick="goBack()" class="back-button">🔙 Back</button>
+    <h1 class="title">SCIENCE</h1>
+    
+    <div class="scroll-box">
+        <div class="container">
+            <div class="box" id="box1">
+                <a href="Science7_quarter1_module1.html">
+                    <img src="./science7_quarter1_module1.jpg" alt="Module 1">
+                </a>
+            </div>
+            <div class="box" id="box2">
+                <a href="Science7_quarter1_module2.html">
+                    <img src="./science7_quarter1_module2.jpg" alt="Module 2">
+                </a>
+            </div>
+            <div class="box" id="box3">
+                <a href="Science7_quarter1_module3.html">
+                    <img src="./science7_quarter1_module3.jpg" alt="Module 3">
+                </a>
+            </div>
+            <div class="box" id="box4">
+                <a href="Science7_quarter1_module4.html">
+                    <img src="./science7_quarter1_module4.webp" alt="Module 4">
+                </a>
+            </div>
+            <div class="box" id="box5">
+                <a href="Science7_quarter1_module5.html">
+                    <img src="./science7_quarter1_module5.webp" alt="Module 5">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="oval-1"></div>
+    <div class="oval-2"></div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        const container = document.querySelector('.container');
+        const boxes = document.querySelectorAll('.box');
+
+        function updateBoxes() {
+            const containerRect = container.getBoundingClientRect();
+            const containerCenter = containerRect.left + containerRect.width / 2;
+
+            boxes.forEach(box => {
+                const boxRect = box.getBoundingClientRect();
+                const boxCenter = boxRect.left + boxRect.width / 2;
+                const distanceFromCenter = Math.abs(containerCenter - boxCenter);
+                const maxDistance = containerRect.width / 2;
+
+                let progress = distanceFromCenter / maxDistance;
+                if (progress > 1) progress = 1;
+
+                if (progress < 0.5) {
+                    box.classList.add('selected');
+                } else {
+                    box.classList.remove('selected');
+                }
+            });
+        }
+
+        container.addEventListener('scroll', updateBoxes);
+        updateBoxes();
+    </script>
+</body>
+</html>

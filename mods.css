@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #695681, #40314b);
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.module-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  scroll-padding: 0px; /* Reset scroll padding */
+}
+
+.module-list::-webkit-scrollbar {
+  height: 4px; /* Shorter scrollbar height */
+}
+
+.module-list::-webkit-scrollbar-thumb {
+  background: #8077EA;
+  border-radius: 4px;
+}
+
+.module-list::-webkit-scrollbar-track {
+  background: #40314b;
+}
+
+.module-box {
+  flex: 0 0 200px; /* Ensure consistent box sizing for books */
+  height: 250px; /* Adjust height for book shape */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.module-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.module-box:first-child {
+  margin-left: calc(50vw - 100px); /* Center the first module in view */
+}
+
+.module-box:last-child {
+  margin-right: calc(50vw - 100px); /* Center the last module in view */
+}
+
+.module-box a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #40314b;
+}
